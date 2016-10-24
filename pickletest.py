@@ -1,11 +1,14 @@
 import pickle
 operation =(str(input("Please specify operation: ")))
-todolist = []
+todolist = pickle.load(open("test", "rb"))
 if operation == "a":
     todolist.append(str(input("input your task: ")))
-    print(todolist[0])
     pickle.dump(todolist, open("test", "wb"))
+if operation == "v":
+    todolist = pickle.load(open("test", "rb"))
+    print(todolist)
     
+
 
 
 
