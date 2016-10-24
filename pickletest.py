@@ -1,8 +1,4 @@
 import pickle
-#marklist = [False]
-#todolist= ["lista"]
-#pickle.dump(todolist, open("test", "wb"))
-#pickle.dump(marklist, open("mark.p", "wb"))
 while True:
         operation = (str(input("Please specify operation: ")))
         try:
@@ -27,6 +23,14 @@ while True:
             todolist = pickle.load(open("test", "rb"))
             remid = int(input("which task do you want to remove? "))
             todolist.remove(todolist[remid])
+            marklist.remove(marklist[remid])
             pickle.dump(todolist, open("test", "wb"))
+            pickle.dump(marklist, open("mark.p", "wb"))
+        elif operation == "m":
+            todolist = pickle.load(open("test", "rb"))
+            marklist = pickle.load(open("mark.p", "rb"))
+            mark = (int(input("ID of task you want to mark as done: ")))
+            print = (todolist[mark], marklist[mark])
+        
         elif operation == "x":
             break
