@@ -4,6 +4,8 @@ todolist = []
 if operation == "a":
     todolist.append(str(input("input your task: ")))
     print(todolist[0])
+    pickle.dump(todolist, open("test", "wb"))
+    
 
 
 
